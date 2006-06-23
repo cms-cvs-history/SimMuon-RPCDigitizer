@@ -11,6 +11,6 @@ module muonrpcdigi = RPCDigiProducer {
 		double timeJitter = 1.0
 		double signalPropagationSpeed = 0.66
 		double linkGateWidth = 20.0
-		bool printOutDigitizer = true
+		bool printOutDigitizer = false
 	}
 } 
