@@ -8,4 +8,10 @@
 <library file="RPCDigiReader.cc" name=RPCDigiReader>
   <flags SEAL_PLUGIN_NAME="RPCDigiReader">
 </library>
+<library file="RPCEventDump.cc" name=RPCEventDump>
+  <flags SEAL_PLUGIN_NAME="RPCEventDump">
+</library>
+<library file="RPCFakeEvent.cc" name=RPCFakeEvent>
+  <flags SEAL_PLUGIN_NAME="RPCFakeEvent">
+</library>
 
