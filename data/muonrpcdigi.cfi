@@ -1,6 +1,6 @@
 # Module to create simulated RPC digis.
 
-module muonrpcdigi = RPCDigiProducer {
+module muonRPCDigis = RPCDigiProducer {
 	string digiModel = 'RPCSimParam'
 	PSet digiModelConfig = {
 		double averageEfficiency = 0.95
