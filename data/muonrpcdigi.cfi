@@ -1,16 +1,4 @@
-# Module to create simulated RPC digis.
+#FIXME: please use the file below, this old one will disappear soon.
 
-module muonRPCDigis = RPCDigiProducer {
-	string digiModel = 'RPCSimParam'
-	PSet digiModelConfig = {
-		double averageEfficiency = 0.95
-		double averageClusterSize = 1.5
-		double timeResolution = 2.5
-		double timingRPCOffset = 50.0
-		double deltatimeAdjacentStrip = 3.0
-		double timeJitter = 1.0
-		double signalPropagationSpeed = 0.66
-		double linkGateWidth = 20.0
-		bool printOutDigitizer = false
-	}
-} 
+include "SimMuon/RPCDigitizer/data/muonRPCDigis.cfi"
+
