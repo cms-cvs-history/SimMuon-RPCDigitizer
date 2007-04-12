@@ -5,12 +5,12 @@
   <use name=Geometry/RPCGeometry>
   <use name=Geometry/Records>
 <library file="RPCDigiReader.cc" name=RPCDigiReader>
-  <flags SEAL_PLUGIN_NAME="RPCDigiReader">
+  <flags EDM_PLUGIN=1>
 </library>
 <library file="RPCEventDump.cc" name=RPCEventDump>
-  <flags SEAL_PLUGIN_NAME="RPCEventDump">
+  <flags EDM_PLUGIN=1>
 </library>
 <library file="RPCFakeEvent.cc" name=RPCFakeEvent>
-  <flags SEAL_PLUGIN_NAME="RPCFakeEvent">
+  <flags EDM_PLUGIN=1>
 </library>
 
