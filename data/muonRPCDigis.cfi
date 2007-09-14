@@ -1,7 +1,7 @@
 # Module to create simulated RPC digis.
 
 module muonRPCDigis = RPCDigiProducer {
-	string digiModel = 'RPCSimParam'
+	string digiModel = 'RPCSimAverage'
 	PSet digiModelConfig = {
 		double averageEfficiency = 0.95
 		double averageClusterSize = 1.5
@@ -12,6 +12,9 @@ module muonRPCDigis = RPCDigiProducer {
 		double signalPropagationSpeed = 0.66
 		double linkGateWidth = 20.0
 		bool printOutDigitizer = false
+                bool file = true
+                bool cosmics = true
+                string filename = "../data/CosmicTimingIdNum1.dat"
 	}
 } 
 
