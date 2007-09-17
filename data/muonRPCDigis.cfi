@@ -12,9 +12,16 @@ module muonRPCDigis = RPCDigiProducer {
 		double signalPropagationSpeed = 0.66
 		double linkGateWidth = 20.0
 		bool printOutDigitizer = false
-                bool file = true
-                bool cosmics = true
+                bool file = false
+                bool cosmics = false
                 string filename = "../data/CosmicTimingIdNum1.dat"
+
+##########################################################################
+
+		double Rate = 100.
+                int32 Nbxing = 4
+                double Gate = 25.
+
 	}
 } 
 
