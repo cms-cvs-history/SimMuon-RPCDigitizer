@@ -2,6 +2,10 @@
 
 module muonRPCDigis = RPCDigiProducer {
 	string digiModel = 'RPCSimAverage'
+                
+        bool Signal = true
+        bool Noise = true
+
 	PSet digiModelConfig = {
 		double averageEfficiency = 0.95
 		double averageClusterSize = 1.5
@@ -14,12 +18,13 @@ module muonRPCDigis = RPCDigiProducer {
 		bool printOutDigitizer = false
                 bool file = false
                 bool cosmics = false
-                string filename = "../data/CosmicTimingIdNum1.dat"
+                string filename = "SimMuon/RPCDigitizer/data/CosmicTimingIdNum1.dat"
+
 
 ##########################################################################
 
-		double Rate = 100.
-                int32 Nbxing = 4
+		double Rate = 0.
+                int32 Nbxing = 9
                 double Gate = 25.
 
 	}
