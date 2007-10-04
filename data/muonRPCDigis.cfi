@@ -1,7 +1,7 @@
 # Module to create simulated RPC digis.
 
 module muonRPCDigis = RPCDigiProducer {
-	string digiModel = 'RPCSimAverage'
+	string digiModel = 'RPCSimParam'
                 
         bool Signal = true
         bool Noise = true
@@ -19,7 +19,7 @@ module muonRPCDigis = RPCDigiProducer {
                 bool file = false
                 bool cosmics = false
                 string filename = "SimMuon/RPCDigitizer/data/CosmicTimingIdNum1.dat"
-
+                string fileClusterSize = "SimMuon/RPCDigitizer/data/ClSizeTot.dat"
 
 ##########################################################################
 
