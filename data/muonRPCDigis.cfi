@@ -18,8 +18,8 @@ module muonRPCDigis = RPCDigiProducer {
 		bool printOutDigitizer = false
                 bool file = false
                 bool cosmics = false
-                string filename = "SimMuon/RPCDigitizer/data/CosmicTimingIdNum1.dat"
-                string fileClusterSize = "SimMuon/RPCDigitizer/data/ClSizeTot.dat"
+                FileInPath timingMap  = "SimMuon/RPCDigitizer/data/CosmicTimingIdNum1.dat"
+                FileInPath clsmapfile = "SimMuon/RPCDigitizer/data/ClSizeTot.dat"
 
 ##########################################################################
 
