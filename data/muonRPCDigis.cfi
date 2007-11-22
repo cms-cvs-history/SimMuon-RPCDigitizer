@@ -1,10 +1,15 @@
 # Module to create simulated RPC digis.
 
 module muonRPCDigis = RPCDigiProducer {
-	string digiModel = 'RPCSimAverage'
+	string digiModel = 'RPCSimAverageNoiseEff'
                 
         bool Signal = true
         bool Noise = true
+              
+        FileInPath noisemapfile = "SimMuon/RPCDigitizer/data/RPCDetId_Noise.dat"
+        FileInPath effmapfile = "SimMuon/RPCDigitizer/data/RPCDetId_Eff.dat"
+	FileInPath timingMap  = "SimMuon/RPCDigitizer/data/RPCTiming.dat"
+        FileInPath clsmapfile = "SimMuon/RPCDigitizer/data/ClSizeTot.dat"	
 
 	PSet digiModelConfig = {
 		double averageEfficiency = 0.95
@@ -16,10 +21,8 @@ module muonRPCDigis = RPCDigiProducer {
 		double signalPropagationSpeed = 0.66
 		double linkGateWidth = 20.0
 		bool printOutDigitizer = false
-                bool file = false
+
                 bool cosmics = false
-                FileInPath timingMap  = "SimMuon/RPCDigitizer/data/CosmicTimingIdNum1.dat"
-                FileInPath clsmapfile = "SimMuon/RPCDigitizer/data/ClSizeTot.dat"
 
 ##########################################################################
 
