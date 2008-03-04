@@ -29,6 +29,7 @@ module muonRPCDigis = RPCDigiProducer {
 		double Rate = 0.
                 int32 Nbxing = 9
                 double Gate = 25.
+                double Frate = 1.
 
 	}
 } 
