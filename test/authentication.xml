@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<connectionlist>
+ 
+<connection name="oracle://int2r/CMS_RPC_INTEGRATION">
+  <parameter name="user" value="CMS_RPC_INTEGRATION"/>
+  <parameter name="password" value="cern2001x"/>
+</connection>
+
+</connectionlist>
