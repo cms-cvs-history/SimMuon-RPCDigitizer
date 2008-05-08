@@ -39,7 +39,7 @@ RPCDigiProducer::~RPCDigiProducer() {
 void RPCDigiProducer::produce(edm::Event& e, const edm::EventSetup& eventSetup) {
 
   edm::Handle<CrossingFrame<PSimHit> > cf;
-  e.getByLabel("mix", "MuonRPCHits", cf);
+  e.getByLabel("mix", "g4SimHitsMuonRPCHits", cf);
 
   // test access to SimHits
   const std::string hitsName("MuonRPCHits");
