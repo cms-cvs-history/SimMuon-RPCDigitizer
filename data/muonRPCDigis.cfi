@@ -1,6 +1,6 @@
 # Module to create simulated RPC digis.
 
-module simMuonRPCDigis = RPCDigiProducer {
+module muonRPCDigis = RPCDigiProducer {
 	string digiModel = 'RPCSimAverageNoiseEff'
                 
         bool Signal = true
@@ -29,7 +29,6 @@ module simMuonRPCDigis = RPCDigiProducer {
 		double Rate = 0.
                 int32 Nbxing = 9
                 double Gate = 25.
-                double Frate = 1.
 
 	}
 } 
