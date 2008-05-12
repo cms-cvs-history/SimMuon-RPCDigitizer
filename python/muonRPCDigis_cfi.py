@@ -11,7 +11,6 @@ simMuonRPCDigis = cms.EDProducer("RPCDigiProducer",
         cosmics = cms.bool(False),
         deltatimeAdjacentStrip = cms.double(3.0),
         linkGateWidth = cms.double(20.0),
-        #
         Rate = cms.double(0.0),
         timeResolution = cms.double(2.5),
         averageClusterSize = cms.double(1.5),
@@ -25,6 +24,7 @@ simMuonRPCDigis = cms.EDProducer("RPCDigiProducer",
     clsmapfile = cms.FileInPath('SimMuon/RPCDigitizer/data/ClSizeTot.dat'),
     noisemapfile = cms.FileInPath('SimMuon/RPCDigitizer/data/RPCDetId_Noise.dat'),
     timingMap = cms.FileInPath('SimMuon/RPCDigitizer/data/RPCTiming.dat'),
+    InputCollection = cms.string('g4SimHitsMuonRPCHits'),
     digiModel = cms.string('RPCSimAverageNoiseEff')
 )
 
