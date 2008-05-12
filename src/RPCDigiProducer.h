@@ -29,6 +29,9 @@ private:
   RPCDigitizer* theDigitizer;
   RPCSimSetUp* theRPCSimSetUp;
 
+  //Name of Collection used for create the XF 
+  std::string collection_for_XF;
+
 };
 
 #endif

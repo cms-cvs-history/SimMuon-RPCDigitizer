@@ -29,6 +29,9 @@ RPCDigiProducer::RPCDigiProducer(const edm::ParameterSet& ps) {
 
   produces<RPCDigiCollection>();
   produces<RPCDigitizerSimLinks>("RPCDigiSimLink");
+
+  //Name of Collection used for create the XF 
+  collection_for_XF = ps.getParameter<std::string>("InputCollection");
 }
 
 RPCDigiProducer::~RPCDigiProducer() {
@@ -39,7 +42,7 @@ RPCDigiProducer::~RPCDigiProducer() {
 void RPCDigiProducer::produce(edm::Event& e, const edm::EventSetup& eventSetup) {
 
   edm::Handle<CrossingFrame<PSimHit> > cf;
-  e.getByLabel("mix", "MuonRPCHits", cf);
+  e.getByLabel("mix", collection_for_XF, cf);
 
   // test access to SimHits
   const std::string hitsName("MuonRPCHits");
