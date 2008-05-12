@@ -1,6 +1,9 @@
 # Module to create simulated RPC digis.
 
 module simMuonRPCDigis = RPCDigiProducer {
+        
+        string InputCollection 'g4SimHitsMuonRPCHits'
+
 	string digiModel = 'RPCSimAverageNoiseEff'
                 
         bool Signal = true
