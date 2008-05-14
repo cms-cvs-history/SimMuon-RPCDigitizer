@@ -2,8 +2,6 @@
 
 module simMuonRPCDigis = RPCDigiProducer {
         
-        string InputCollection = 'g4SimHitsMuonRPCHits'
-
 	string digiModel = 'RPCSimAverageNoiseEff'
                 
         bool Signal = true
