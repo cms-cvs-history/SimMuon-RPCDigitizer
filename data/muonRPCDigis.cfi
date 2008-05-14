@@ -8,7 +8,9 @@ module simMuonRPCDigis = RPCDigiProducer {
                 
         bool Signal = true
         bool Noise = true
-              
+
+        string InputCollection = 'g4SimHitsMuonRPCHits'
+     
         FileInPath noisemapfile = "SimMuon/RPCDigitizer/data/RPCDetId_Noise.dat"
         FileInPath effmapfile = "SimMuon/RPCDigitizer/data/RPCDetId_Eff.dat"
 	FileInPath timingMap  = "SimMuon/RPCDigitizer/data/RPCTiming.dat"
@@ -34,3 +36,24 @@ module simMuonRPCDigis = RPCDigiProducer {
 
 	}
 } 
+
+
+################### FAKE SOURCE ################################
+       include "CalibMuon/RPCCalibration/data/rpcFakeCalib.cfi"
+################################################################
+
+################### DATABASE READING ###########################
+#es_source = PoolDBESSource { 
+#     #string connect = "sqlite_file:pop_test.db"
+#     string connect = "oracle://int2r/CMS_RPC_INTEGRATION"
+#     string timetype = "runnumber" 
+#	
+#     PSet DBParameters = {
+#	 #untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
+#         untracked string authenticationPath="."
+#	 untracked int32 messageLevel=2
+#     }
+#
+#     VPSet toGet = { { string record = "RPCStripNoisesRcd" string tag ="Example_tag2" } }
+#}
+
