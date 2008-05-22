@@ -2,6 +2,7 @@
 
 module simMuonRPCDigis = RPCDigiProducer {
         
+	
 	string digiModel = 'RPCSimAverageNoiseEff'
                 
         bool Signal = true
@@ -9,11 +10,6 @@ module simMuonRPCDigis = RPCDigiProducer {
 
         string InputCollection = 'g4SimHitsMuonRPCHits'
      
-        FileInPath noisemapfile = "SimMuon/RPCDigitizer/data/RPCDetId_Noise.dat"
-        FileInPath effmapfile = "SimMuon/RPCDigitizer/data/RPCDetId_Eff.dat"
-	FileInPath timingMap  = "SimMuon/RPCDigitizer/data/RPCTiming.dat"
-        FileInPath clsmapfile = "SimMuon/RPCDigitizer/data/ClSizeTot.dat"	
-
 	PSet digiModelConfig = {
 		double averageEfficiency = 0.95
 		double averageClusterSize = 1.5
@@ -35,23 +31,26 @@ module simMuonRPCDigis = RPCDigiProducer {
 	}
 } 
 
-
 ################### FAKE SOURCE ################################
        include "CalibMuon/RPCCalibration/data/rpcFakeCalib.cfi"
 ################################################################
 
 ################### DATABASE READING ###########################
-#es_source = PoolDBESSource { 
-#     #string connect = "sqlite_file:pop_test.db"
+
+#es_source RPCCalibPerf = PoolDBESSource { 
+#     string connect = "sqlite_file:pop_test.db"
 #     string connect = "oracle://int2r/CMS_RPC_INTEGRATION"
+#     string connect = "frontier://FrontierProd/CMS_COND_20X_RPC"
+#     string connect = "frontier://(serverurl=http://cmsfrontier.cern.ch:8000/FrontierProd)/CMS_COND_20X_RPC"
 #     string timetype = "runnumber" 
 #	
 #     PSet DBParameters = {
-#	 #untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb"
-#         untracked string authenticationPath="."
+#	 untracked string authenticationPath="/afs/cern.ch/cms/DB/conddb" //For sqlite db
+#         untracked string authenticationPath="."//For oracle DB
 #	 untracked int32 messageLevel=2
-#     }
+#      }
 #
 #     VPSet toGet = { { string record = "RPCStripNoisesRcd" string tag ="Example_tag2" } }
 #}
-
+#
+#es_prefer RPCCalibPerf = PoolDBESSource {} 
