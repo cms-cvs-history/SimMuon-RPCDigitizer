@@ -2,7 +2,6 @@
 
 module simMuonRPCDigis = RPCDigiProducer {
         
-	
 	string digiModel = 'RPCSimAverageNoiseEff'
                 
         bool Signal = true
@@ -10,6 +9,11 @@ module simMuonRPCDigis = RPCDigiProducer {
 
         string InputCollection = 'g4SimHitsMuonRPCHits'
      
+#        FileInPath noisemapfile = "SimMuon/RPCDigitizer/data/RPCDetId_Noise.dat"
+#        FileInPath effmapfile = "SimMuon/RPCDigitizer/data/RPCDetId_Eff.dat"
+#	FileInPath timingMap  = "SimMuon/RPCDigitizer/data/RPCTiming.dat"
+#        FileInPath clsmapfile = "SimMuon/RPCDigitizer/data/ClSizeTot.dat"	
+
 	PSet digiModelConfig = {
 		double averageEfficiency = 0.95
 		double averageClusterSize = 1.5
@@ -30,3 +34,7 @@ module simMuonRPCDigis = RPCDigiProducer {
 
 	}
 } 
+
+
+
+
