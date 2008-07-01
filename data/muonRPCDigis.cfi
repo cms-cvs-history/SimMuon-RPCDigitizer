@@ -6,7 +6,6 @@ module simMuonRPCDigis = RPCDigiProducer {
                 
         bool Signal = true
         bool Noise = true
-        string GeometryType = 'idealForDigi'	
 
         string InputCollection = 'g4SimHitsMuonRPCHits'
      
