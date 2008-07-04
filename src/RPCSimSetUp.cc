@@ -43,7 +43,7 @@ RPCSimSetUp::RPCSimSetUp(const edm::ParameterSet& ps) {
 
 }
 
-void RPCSimSetUp::setRPCSetUp(std::vector<RPCStripNoises::NoiseItem> vnoise, std::vector<double> vcls){
+void RPCSimSetUp::setRPCSetUp(std::vector<RPCStripNoises::NoiseItem> vnoise, std::vector<float> vcls){
 
   double sum = 0;
   unsigned int counter = 1;
@@ -64,39 +64,52 @@ void RPCSimSetUp::setRPCSetUp(std::vector<RPCStripNoises::NoiseItem> vnoise, std
     counter++;
   }
 
+  unsigned int n = 0; uint32_t temp; 
+  std::vector<float> veff, vvnoise;
+  veff.clear();
+  vvnoise.clear();
+
   for(std::vector<RPCStripNoises::NoiseItem>::iterator it = vnoise.begin(); it != vnoise.end(); ++it){
 
-    _bxmap[RPCDetId(it->dpid)] = it->time;
-    std::vector<float> veff, vvnoise;
+    if(n%96 == 0) {
+      if(n > 0 ){
+	_mapDetIdNoise[temp]= vvnoise;
+	_mapDetIdEff[temp] = veff;
+	_bxmap[RPCDetId(temp)] = it->time;
+      }
 
-    veff.clear();
-    vvnoise.clear();
+      veff.clear();
+      vvnoise.clear();
 
-    for(unsigned int j = 0; j < 96;++j){
-      vvnoise.push_back((it->noise)[j]);
-      veff.push_back((it->eff)[j]);
+
+      vvnoise.push_back((it->noise));
+      veff.push_back((it->eff));
+
+    } else if (n == vnoise.size()-1 ){
+      temp = it->dpid;
+      vvnoise.push_back((it->noise));
+      veff.push_back((it->eff));
+      _mapDetIdNoise[temp]= vvnoise;
+      _mapDetIdEff[temp] = veff;
+    } else {
+      temp = it->dpid;
+      vvnoise.push_back((it->noise));
+      veff.push_back((it->eff));
     }
-
-    _mapDetIdNoise[it->dpid]= vvnoise;
-    _mapDetIdEff[it->dpid] = veff;
-
+    n++;
   }
 }
 
 std::vector<float> RPCSimSetUp::getNoise(uint32_t id)
 {
   map<uint32_t,std::vector<float> >::iterator iter = _mapDetIdNoise.find(id);
-  std::vector<float> vnoise = iter->second;
-
-  return vnoise;
+  return iter->second;
 }
 
 std::vector<float> RPCSimSetUp::getEff(uint32_t id)
 {
   map<uint32_t,std::vector<float> >::iterator iter = _mapDetIdEff.find(id);
-  std::vector<float> veff = iter->second;
-
-  return veff;
+  return iter->second;
 }
 
 float RPCSimSetUp::getTime(uint32_t id)
