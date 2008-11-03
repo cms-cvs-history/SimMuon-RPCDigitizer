@@ -1,4 +1,0 @@
-#FIXME: please use the file below, this old one will disappear soon.
-
-include "SimMuon/RPCDigitizer/data/muonRPCDigis.cfi"
-
