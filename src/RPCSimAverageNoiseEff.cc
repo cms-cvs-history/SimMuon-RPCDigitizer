@@ -162,7 +162,7 @@ RPCSimAverageNoiseEff::simulate(const RPCRoll* roll,
   for (edm::PSimHitContainer::const_iterator _hit = rpcHits.begin();
        _hit != rpcHits.end(); ++_hit){
 
-    if(abs(_hit-> particleType()) != 13) continue;
+    if(_hit-> particleType() == 11) continue;
 
     // Here I hould check if the RPC are up side down;
     const LocalPoint& entr=_hit->entryPoint();
@@ -269,6 +269,7 @@ void RPCSimAverageNoiseEff::simulateNoise(const RPCRoll* roll)
       float striplength = (top_->stripLength());
       area = striplength*(xmax-xmin);
     }
+
   //Defining a new engine local to this method for the two distributions defined below
   edm::Service<edm::RandomNumberGenerator> rnd;
   if ( ! rnd.isAvailable()) {
