@@ -15,8 +15,6 @@
 <use name=SimDataFormats/TrackingHit>
 <use name=SimGeneral/HepPDTRecord>
 <use name=Utilities/General>
-<use name=Utilities/Timing>
-
 
 <library file="RPCDigiReader.cc" name=RPCDigiReader>
   <flags EDM_PLUGIN=1>
